@@ -47,8 +47,6 @@ namespace DesafioBackEndProject.Application.Services
                 throw new ValidationException(validationResult.Errors);
             }
 
-            
-
 
             var moto = motoDto.Adapt<Motorcycle>();
 

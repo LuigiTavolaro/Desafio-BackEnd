@@ -20,5 +20,8 @@ namespace DesafioBackEndProject.Domain.Entities
         [Column("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+
+        public ICollection<Rental> Rentals { get; set; }
+
     }
 }

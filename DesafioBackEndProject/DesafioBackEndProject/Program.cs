@@ -2,9 +2,12 @@ using DesafioBackEndProject.Application;
 using DesafioBackEndProject.Application.Validators;
 using DesafioBackEndProject.Infrastructure;
 using DesafioBackEndProject.Infrastructure.Data;
+using DesafioBackEndProject.Infrastructure.Mapping;
 using DesafioBackEndProject.Infrastructure.Messaging;
 using DesafioBackEndProject.Middlewares;
 using FluentValidation;
+using Mapster;
+using MapsterMapper;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +21,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddValidatorsFromAssemblyContaining<MotorcycleValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<DriverValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<RentalValidator>();
 
 builder.Services.AddDbContext<DesafioDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -28,7 +33,14 @@ builder.Services.AddDbContext<DesafioDbContext>(options =>
             .MaxBatchSize(10)) // Configura o tamanho máximo do lote
 );
 
-//builder.Services.AddHostedService<MotorcycleConsumer>() ;
+var config = TypeAdapterConfig.GlobalSettings;
+MappingConfig.ConfigureMappings();
+
+// Registra o TypeAdapterConfig como Singleton
+builder.Services.AddSingleton(config);
+builder.Services.AddSingleton<IMapper, ServiceMapper>();
+
+
 
 builder.Services.AddMassTransit(x =>
 {

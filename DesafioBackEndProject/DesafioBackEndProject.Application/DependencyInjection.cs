@@ -9,6 +9,8 @@ namespace DesafioBackEndProject.Application
         {
             // Registro dos serviços
             services.AddScoped<IMotorcycleService, MotorcycleService>();
+            services.AddScoped<IDriverService, DriverService>();
+            services.AddScoped<IRentalService, RentalService>();
         }
     }
 }

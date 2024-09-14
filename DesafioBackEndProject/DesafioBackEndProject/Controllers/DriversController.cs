@@ -8,67 +8,32 @@ namespace DesafioBackEndProject.Controllers
     [Route("entregadores")]
     public class DriversController : ControllerBase
     {
-        private readonly IMotorcycleService _motorcycleService;
+        private readonly IDriverService _driverService;
 
-        public DriversController(IMotorcycleService motoService)
+        public DriversController(IDriverService driverService)
         {
-            _motorcycleService = motoService;
-        }
-
-        /// <summary>
-        /// Consulta todas as motos existentes.
-        /// </summary>
-        /// <returns>Uma lista de todas as motos cadastradas.</returns>
-        [HttpGet]
-        public async Task<IActionResult> GetMotos()
-        {
-            var motos = await _motorcycleService.GetAllAsync();
-            return Ok(motos);
-        }
-        /// <summary>
-        /// Consulta uma moto existente pelo ID.
-        /// </summary>
-        /// <param name="id">O ID da moto a ser consultada.</param>
-        /// <returns>A moto correspondente ao ID.</returns>
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetMotoById(int id)
-        {
-            var moto = await _motorcycleService.GetByIdAsync(id);
-            if (moto is null)
-                return NotFound();
-            return Ok(moto);
-        }
-        /// <summary>
-        /// Consulta uma moto existente pela placa.
-        /// </summary>
-        /// <param name="plate">A placa da moto a ser consultada.</param>
-        /// <returns>A moto correspondente a placa.</returns>
-        [HttpGet("{placa}")]
-        public async Task<IActionResult> GetMotoByPlate(string placa)
-        {
-            var moto = await _motorcycleService.GetByPlateAsync(placa);
-            if (moto is null)
-                return NotFound();
-            return Ok(moto);
+            _driverService = driverService;
         }
 
+
         /// <summary>
-        /// Cadastra uma nova moto.
+        /// Cadastra um novo entregador.
         /// </summary>
-        /// <param name="motoDto">Os dados da moto a ser cadastrada.</param>
-        /// <returns>O ID da moto cadastrada.</returns>
+        /// <param name="driverDto">Os dados do entregador a ser cadastrada.</param>
+        /// <returns>O ID cadastrado.</returns>
         [HttpPost]
-        public async Task<IActionResult> CreateMoto([FromBody] MotorcycleCreateDto motoDto)
+        public async Task<IActionResult> CreateDriver([FromBody] DriverCreateDto driverDto)
         {
-            if (motoDto == null)
-                return BadRequest("Dados da moto não fornecidos.");
+            if (driverDto == null)
+                return BadRequest("Dados do entregador não fornecidos.");
 
-            var id = await _motorcycleService.AddAsync(motoDto);
+            var id = await _driverService.AddAsync(driverDto);
 
-            if (id == 0)
-                return BadRequest("Moto já cadastrada.");
+            if (id == null)
+                return BadRequest("Entregador já cadastrado.");
 
-            return CreatedAtAction(nameof(GetMotoById), new { id }, motoDto);
+            return Created("Sucesso",null);
+
         }
 
         /// <summary>
@@ -78,28 +43,12 @@ namespace DesafioBackEndProject.Controllers
         /// <param name="newPlate">A nova placa da moto.</param>
         /// <returns>Status da operação.</returns>
         [HttpPut("{id}/placa")]
-        public async Task<IActionResult> UpdatePlate(int id, [FromBody] string newPlate)
+        public async Task<IActionResult> UpdatePlate(int id, [FromBody] string newCnh)
         {
-            if (string.IsNullOrWhiteSpace(newPlate))
-                return BadRequest("Nova placa não fornecida.");
+            if (string.IsNullOrWhiteSpace(newCnh))
+                return BadRequest("Nova CNH não fornecida.");
 
-            await _motorcycleService.UpdatePlateAsync(id, newPlate);
-            return NoContent();
-        }
-
-        /// <summary>
-        /// Remove uma moto existente pelo ID.
-        /// </summary>
-        /// <param name="id">O ID da moto a ser removida.</param>
-        /// <returns>Status da operação.</returns>
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMoto(int id)
-        {
-            var moto = await _motorcycleService.GetByIdAsync(id);
-            if (moto == null)
-                return NotFound();
-
-            await _motorcycleService.DeleteAsync(id);
+            await _driverService.UpdateCnhPictureAsync(id, newCnh);
             return NoContent();
         }
     }

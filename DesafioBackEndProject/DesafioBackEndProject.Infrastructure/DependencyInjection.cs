@@ -10,6 +10,8 @@ namespace DesafioBackEndProject.Infrastructure
         {
             // Registro dos serviços
             services.AddScoped<IMotorcycleRepository, MotorcycleRepository>();
+            services.AddScoped<IDriverRepository, DriverRepository>();
+            services.AddScoped<IRentalRepository, RentalRepository>();
         }
     }
 }
