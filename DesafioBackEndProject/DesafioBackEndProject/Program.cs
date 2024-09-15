@@ -24,6 +24,8 @@ builder.Services.AddValidatorsFromAssemblyContaining<MotorcycleValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<DriverValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<RentalValidator>();
 
+builder.Services.AddMemoryCache();
+
 builder.Services.AddDbContext<DesafioDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),
         npgsqlOptions => npgsqlOptions

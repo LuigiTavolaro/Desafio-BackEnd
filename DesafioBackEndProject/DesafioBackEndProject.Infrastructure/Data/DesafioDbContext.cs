@@ -10,12 +10,15 @@ namespace DesafioBackEndProject.Infrastructure.Data
         public DbSet<Motorcycle> Motos { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Rental> Rentals { get; set; }
+        public DbSet<PriceRange> PricesRange { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Motorcycle>().HasKey(m => m.Id);
             modelBuilder.Entity<Driver>().HasKey(m => m.Id);
             modelBuilder.Entity<Rental>().HasKey(m => m.Id);
+            modelBuilder.Entity<PriceRange>().HasKey(m => m.Id);
 
             modelBuilder.Entity<Rental>()
                 .HasOne(r => r.Motorcycle)
