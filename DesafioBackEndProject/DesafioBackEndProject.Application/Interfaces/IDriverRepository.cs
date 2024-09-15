@@ -19,11 +19,11 @@ namespace DesafioBackEndProject.Application.Interfaces
         Task<bool> GetByCompositeKey(Driver driver);
 
         /// <summary>
-        /// Atualiza a placa de uma moto existente.
+        /// Busca por Chave
         /// </summary>
-        /// <param name="id">O ID da moto.</param>
-        /// <param name="newPlate">A nova placa a ser atribuída.</param>
-        /// <returns>Tarefa assíncrona.</returns>
-        Task UpdateCnhPictureAsync(int id, string newCnh);
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<Driver?> GetById(int id);
+
     }
 }

@@ -7,5 +7,6 @@ namespace DesafioBackEndProject.Application.Services
         Task<RentalReadDto?> GetByIdAsync(int id);
 
         Task<int> AddAsync(RentalCreateDto moto);
+        Task <decimal> CalculateRentalReturnPrice(int id, DateTime dataDevoluacao);
     }
 }

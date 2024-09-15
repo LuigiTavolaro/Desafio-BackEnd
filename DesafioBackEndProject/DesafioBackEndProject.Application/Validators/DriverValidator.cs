@@ -11,12 +11,12 @@ namespace DesafioBackEndProject.Application.Validators
                 .MaximumLength(100).WithMessage("Model must not exceed 100 characters.");
 
             RuleFor(x => x.NumeroCnh)
-                .NotEmpty().WithMessage("A placa é obrigatória.");
+                .NotEmpty().WithMessage("numero da CNH é obrigatória.");
 
             RuleFor(x => x.TipoCnh)
                 .NotEmpty().WithMessage("O Tipo de CNH é obrigatório.")
-                .Must(cnh => cnh == "A" || cnh == "B" || cnh == "A+B")
-                .WithMessage("O tipo de CNH deve ser A, B ou A+B.");
+                .Must(cnh => cnh == "A" || cnh == "B" || cnh == "AB")
+                .WithMessage("O tipo de CNH deve ser A, B ou AB.");
 
             RuleFor(x => x.Cnpj)
                     .NotEmpty().WithMessage("O ano de fabricação é obrigatório.")

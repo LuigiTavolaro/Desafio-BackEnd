@@ -28,11 +28,11 @@ namespace DesafioBackEndProject.Application.Services
             }
             var driver = driverDto.Adapt<Driver>();
 
-            var returnDriver = await _driverRepository.GetByCompositeKey(driver);
+            var returnDriver = await _driverRepository.GetByCompositeKey(driver).ConfigureAwait(false);
 
             if (returnDriver) return null;
 
-            int id = await _driverRepository.AddAsync(driver);
+            int id = await _driverRepository.AddAsync(driver).ConfigureAwait(false);
 
             if (!string.IsNullOrEmpty(driverDto.ImagemCnh))
             {

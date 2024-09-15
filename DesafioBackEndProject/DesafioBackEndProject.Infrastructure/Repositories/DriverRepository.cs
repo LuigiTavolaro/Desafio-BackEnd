@@ -26,10 +26,11 @@ namespace DesafioBackEndProject.Infrastructure.Repositories
            return await _context.Drivers.AnyAsync(m => m.DriverLicenseNumber == driver.DriverLicenseNumber || m.Cnpj == driver.Cnpj);
            
         }
-
-        public Task UpdateCnhPictureAsync(int id, string newCnh)
+        public async Task<Driver?> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Drivers.FindAsync(id);
+
         }
+
     }
 }

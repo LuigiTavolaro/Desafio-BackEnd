@@ -11,6 +11,7 @@ namespace DesafioBackEndProject.Application
             services.AddScoped<IMotorcycleService, MotorcycleService>();
             services.AddScoped<IDriverService, DriverService>();
             services.AddScoped<IRentalService, RentalService>();
+            services.AddScoped<IPriceRangeService, PriceRangeService>();
         }
     }
 }

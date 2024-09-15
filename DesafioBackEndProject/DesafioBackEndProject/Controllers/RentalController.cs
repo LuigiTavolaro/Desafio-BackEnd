@@ -48,6 +48,24 @@ namespace DesafioBackEndProject.Controllers
            // return CreatedAtAction(nameof(GetMotoById), new { id }, motoDto);
         }
 
-        
+        /// <summary>
+        /// Cadastra uma nova moto.
+        /// </summary>
+        /// <param name="motoDto">Os dados da moto a ser cadastrada.</param>
+        /// <returns>O ID da moto cadastrada.</returns>
+        [HttpPut("{id:int}/devolucao")]
+        public async Task<IActionResult> CalculateRentalReturnPrice([FromRoute] int id,[FromBody]DateTime dataDevoluacao)
+        {
+            //if (rentalDto == null)
+            //    return BadRequest("Dados da moto não fornecidos.");
+
+            var rentalPrice = await _rentalService.CalculateRentalReturnPrice(id, dataDevoluacao);
+
+            //if (id == 0)
+            //    return BadRequest("Moto já cadastrada.");
+            return Ok(rentalPrice);
+            // return CreatedAtAction(nameof(GetMotoById), new { id }, motoDto);
+        }
+
     }
 }
