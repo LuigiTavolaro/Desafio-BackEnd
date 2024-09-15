@@ -11,6 +11,7 @@ CREATE TABLE rentals (
     id SERIAL PRIMARY KEY,              -- Identificador único da locação (chave primária)
     motorcycle_id INT NOT NULL,         -- Identificador da moto (chave estrangeira)
     driver_id INT NOT NULL,             -- Identificador do entregador (chave estrangeira)
+    price_range_id INT NOT NULL,
     start_date DATE NOT NULL,           -- Data de início da locação (obrigatório)
     end_date DATE NOT NULL,             -- Data de término da locação (obrigatório)
     expected_end_date DATE NOT NULL,    -- Data de previsão de término da locação (obrigatório)
@@ -24,6 +25,10 @@ CREATE TABLE rentals (
     CONSTRAINT fk_driver
         FOREIGN KEY (driver_id)
         REFERENCES drivers(id)      -- Referência à tabela de motos
+        
+    CONSTRAINT fk_price_range
+        FOREIGN KEY (price_range_id)
+        REFERENCES price_range(id)      -- Referência à tabela de motos
 );
 
 
@@ -45,10 +50,3 @@ CREATE TABLE price_range (
     penalty_rate int null, 
     price_per_day DECIMAL(10, 2) NOT NULL
 );
-
-INSERT INTO price_range (max_days, price_per_day, penalty_rate) VALUES
-(7, 30.00. 20),
-(15, 28.00. 40),
-(30, 22.00, null),
-(45, 20.00, null),
-(50, 18.00, null);

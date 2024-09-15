@@ -13,6 +13,10 @@ namespace DesafioBackEndProject.Domain.Entities
         [Required]
         [Column("motorcycle_id")]
         public int MotorcycleId { get; set; }
+        
+        [Required]
+        [Column("price_range_id")]
+        public int PriceRangeId { get; set; }
 
         [Required]
         [Column("driver_id")]
@@ -36,8 +40,11 @@ namespace DesafioBackEndProject.Domain.Entities
         [Column("updated_at")]
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
+        public PriceRange? PriceRange { get; set; }
+
         public Motorcycle? Motorcycle { get; set; }
         public Driver? Driver { get; set; }
+
 
     }
 }

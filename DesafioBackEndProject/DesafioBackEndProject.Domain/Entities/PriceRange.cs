@@ -15,5 +15,8 @@ namespace DesafioBackEndProject.Domain.Entities
 
         [Column("price_per_day")]
         public decimal PricePerDay { get; set; }
+
+        [Column("penalty_rate")]
+        public int? PenaltyRate { get; set; }
     }
 }
