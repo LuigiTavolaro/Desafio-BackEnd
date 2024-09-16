@@ -1,5 +1,6 @@
 ﻿using DesafioBackEndProject.Application.DTOs;
 using DesafioBackEndProject.Application.Services;
+using DesafioBackEndProject.Domain.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DesafioBackEndProject.Controllers
@@ -9,10 +10,12 @@ namespace DesafioBackEndProject.Controllers
     public class MotosController : ControllerBase
     {
         private readonly IMotorcycleService _motorcycleService;
+        private readonly NotificationHandler _notificationHandler;
 
-        public MotosController(IMotorcycleService motoService)
+        public MotosController(IMotorcycleService motoService, NotificationHandler notificationHandler)
         {
             _motorcycleService = motoService;
+            _notificationHandler = notificationHandler;
         }
 
         /// <summary>
@@ -65,10 +68,14 @@ namespace DesafioBackEndProject.Controllers
 
             var id = await _motorcycleService.AddAsync(motoDto);
 
-            if (id == 0)
-                return BadRequest("Moto já cadastrada.");
+            if (!_notificationHandler.HasNotifications())
+            {
+                return CreatedAtAction(nameof(GetMotoById), new { id }, motoDto);
+            }
 
-            return CreatedAtAction(nameof(GetMotoById), new { id }, motoDto);
+            var notifications = _notificationHandler.GetNotifications();
+            return BadRequest(notifications);
+
         }
 
         /// <summary>
@@ -84,7 +91,13 @@ namespace DesafioBackEndProject.Controllers
                 return BadRequest("Nova placa não fornecida.");
 
             await _motorcycleService.UpdatePlateAsync(id, newPlate);
-            return NoContent();
+            if (!_notificationHandler.HasNotifications())
+            {
+                return Accepted("Registrado atualizado com sucesso.");
+            }
+
+            var notifications = _notificationHandler.GetNotifications();
+            return BadRequest(notifications);
         }
 
         /// <summary>
@@ -100,7 +113,16 @@ namespace DesafioBackEndProject.Controllers
                 return NotFound();
 
             await _motorcycleService.DeleteAsync(id);
-            return NoContent();
+
+            if (!_notificationHandler.HasNotifications())
+            {
+                return Accepted("Registrado apagado com sucesso.");
+            }
+
+            var notifications = _notificationHandler.GetNotifications();
+            return BadRequest(notifications);
+
+
         }
     }
 }

@@ -81,3 +81,6 @@ publish/
 *.bin
 *.v2
 *.coverage
+DesafioBackEndProject/.vs/DesafioBackEndProject/v17/HierarchyCache.v1.txt
+*.v2
+*.testlog

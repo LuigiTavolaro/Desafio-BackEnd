@@ -1,5 +1,6 @@
 ﻿using DesafioBackEndProject.Application.DTOs;
 using DesafioBackEndProject.Application.Services;
+using DesafioBackEndProject.Domain.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DesafioBackEndProject.Controllers
@@ -9,10 +10,12 @@ namespace DesafioBackEndProject.Controllers
     public class DriversController : ControllerBase
     {
         private readonly IDriverService _driverService;
+        private readonly NotificationHandler _notificationHandler;
 
-        public DriversController(IDriverService driverService)
+        public DriversController(IDriverService driverService, NotificationHandler notificationHandler)
         {
             _driverService = driverService;
+            _notificationHandler = notificationHandler;
         }
 
 

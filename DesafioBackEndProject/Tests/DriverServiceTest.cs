@@ -1,11 +1,14 @@
 ﻿
+using Castle.Core.Logging;
 using DesafioBackEndProject.Application.DTOs;
 using DesafioBackEndProject.Application.Interfaces;
 using DesafioBackEndProject.Application.Services;
+using DesafioBackEndProject.Domain.Common;
 using DesafioBackEndProject.Domain.Entities;
 using FluentValidation;
 using FluentValidation.Results;
 using Mapster;
+using Microsoft.Extensions.Logging;
 using Moq;
 
 
@@ -16,12 +19,18 @@ namespace DesafioBackEndProject.Tests
         private readonly Mock<IDriverRepository> _mockDriverRepository;
         private readonly Mock<IValidator<DriverCreateDto>> _mockValidator;
         private readonly DriverService _driverService;
+        
+        private readonly Mock<ILogger<DriverService>> _mockLogger;
+        private readonly Mock<NotificationHandler> _mockNotification;
 
         public DriverServiceTests()
         {
             _mockDriverRepository = new Mock<IDriverRepository>();
             _mockValidator = new Mock<IValidator<DriverCreateDto>>();
-            _driverService = new DriverService(_mockDriverRepository.Object, _mockValidator.Object);
+            _mockLogger = new Mock<ILogger<DriverService>>();
+            _mockNotification = new Mock<NotificationHandler>();
+            _driverService = new DriverService(_mockDriverRepository.Object, _mockValidator.Object, _mockLogger.Object,_mockNotification.Object);
+            
         }
 
         [Fact]
@@ -46,27 +55,7 @@ namespace DesafioBackEndProject.Tests
             _mockDriverRepository.Verify(repo => repo.AddAsync(It.IsAny<Driver>()), Times.Never);
         }
 
-        [Fact]
-        public async Task AddAsync_ShouldThrowValidationException_WhenValidationFails()
-        {
-            // Arrange
-            var driverCreateDto = new DriverCreateDto { Nome = "John Doe", NumeroCnh = "123456" };
-
-            var validationResult = new ValidationResult(new List<ValidationFailure>
-        {
-            new ValidationFailure("Name", "Name is required")
-        });
-
-            _mockValidator.Setup(v => v.ValidateAsync(driverCreateDto, default))
-                          .ReturnsAsync(validationResult); // Simula falha na validação
-
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<ValidationException>(() => _driverService.AddAsync(driverCreateDto));
-
-            Assert.Equal("Validation failed: \r\n -- Name: Name is required Severity: Error", exception.Message);
-            _mockDriverRepository.Verify(repo => repo.AddAsync(It.IsAny<Driver>()), Times.Never);
-        }
-
+       
         [Fact]
         public async Task AddAsync_ShouldReturnDriverId_WhenDriverIsAddedSuccessfully()
         {

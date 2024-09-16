@@ -1,5 +1,6 @@
 ﻿using DesafioBackEndProject.Application.DTOs;
 using DesafioBackEndProject.Application.Services;
+using DesafioBackEndProject.Domain.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DesafioBackEndProject.Controllers
@@ -9,10 +10,11 @@ namespace DesafioBackEndProject.Controllers
     public class RentalController : ControllerBase
     {
         private readonly IRentalService _rentalService;
-
-        public RentalController(IRentalService rentalService)
+        private readonly NotificationHandler _notificationHandler;
+        public RentalController(IRentalService rentalService, NotificationHandler notificationHandler)
         {
             _rentalService = rentalService;
+            _notificationHandler = notificationHandler;
         }
         /// <summary>
         /// Consulta uma moto existente pelo ID.
@@ -27,7 +29,7 @@ namespace DesafioBackEndProject.Controllers
                 return NotFound();
             return Ok(rental);
         }
-        
+
 
         /// <summary>
         /// Cadastra uma nova moto.
@@ -40,12 +42,16 @@ namespace DesafioBackEndProject.Controllers
             if (rentalDto == null)
                 return BadRequest("Dados da moto não fornecidos.");
 
-            var id = await _rentalService.AddAsync(rentalDto);
+            var id = await _rentalService.AddAsync(rentalDto).ConfigureAwait(false);
 
-            if (id == 0)
-                return BadRequest("Moto já cadastrada.");
-            return Created("Sucesso", id);
-           // return CreatedAtAction(nameof(GetMotoById), new { id }, motoDto);
+
+            if (!_notificationHandler.HasNotifications())
+            {
+                return Created("Sucesso", id);
+            }
+
+            var notifications = _notificationHandler.GetNotifications();
+            return BadRequest(notifications);
         }
 
         /// <summary>
@@ -54,17 +60,14 @@ namespace DesafioBackEndProject.Controllers
         /// <param name="motoDto">Os dados da moto a ser cadastrada.</param>
         /// <returns>O ID da moto cadastrada.</returns>
         [HttpPut("{id:int}/devolucao")]
-        public async Task<IActionResult> CalculateRentalReturnPrice([FromRoute] int id,[FromBody]DateTime dataDevoluacao)
+        public async Task<IActionResult> CalculateRentalReturnPrice([FromRoute] int id, [FromBody] DateTime dataDevoluacao)
         {
-            //if (rentalDto == null)
-            //    return BadRequest("Dados da moto não fornecidos.");
-
+            
             var rentalPrice = await _rentalService.CalculateRentalReturnPrice(id, dataDevoluacao);
 
-            //if (id == 0)
-            //    return BadRequest("Moto já cadastrada.");
+
             return Ok(rentalPrice);
-            // return CreatedAtAction(nameof(GetMotoById), new { id }, motoDto);
+           
         }
 
     }

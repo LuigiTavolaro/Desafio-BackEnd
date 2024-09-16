@@ -7,7 +7,7 @@ namespace DesafioBackEndProject.Application.Services
         Task<IEnumerable<MotorcycleReadDto>> GetAllAsync();
         Task<MotorcycleReadDto?> GetByIdAsync(int id);
         Task<MotorcycleReadDto?> GetByPlateAsync(string plate);
-        Task<int> AddAsync(MotorcycleCreateDto moto);
+        Task<int?> AddAsync(MotorcycleCreateDto moto);
         Task UpdatePlateAsync(int id, string newPlate);
         Task DeleteAsync(int id);
     }

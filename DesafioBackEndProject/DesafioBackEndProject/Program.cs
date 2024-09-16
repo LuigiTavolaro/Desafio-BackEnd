@@ -1,5 +1,6 @@
 using DesafioBackEndProject.Application;
 using DesafioBackEndProject.DependecyInjection;
+using DesafioBackEndProject.Domain.Common;
 using DesafioBackEndProject.Infrastructure;
 using DesafioBackEndProject.Infrastructure.Mapping;
 using DesafioBackEndProject.Middlewares;
@@ -18,6 +19,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddFluentValidationConfiguration();
 builder.Services.AddMassTransitConfiguration();
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
+
+builder.Services.AddSingleton<NotificationHandler>();
 
 builder.Services.AddMemoryCache();
 

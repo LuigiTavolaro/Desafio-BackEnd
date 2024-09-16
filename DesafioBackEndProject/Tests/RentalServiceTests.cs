@@ -3,10 +3,12 @@
 using DesafioBackEndProject.Application.DTOs;
 using DesafioBackEndProject.Application.Interfaces;
 using DesafioBackEndProject.Application.Services;
+using DesafioBackEndProject.Domain.Common;
 using DesafioBackEndProject.Domain.Entities;
 using FluentValidation;
 using FluentValidation.Results;
 using Mapster;
+using Microsoft.Extensions.Logging;
 using Moq;
 
 
@@ -21,39 +23,31 @@ namespace DesafioBackEndProject.Tests
         private readonly Mock<IPriceRangeService> _mockPriceRangeService;
         private readonly RentalService _rentalService;
 
+        private readonly Mock<ILogger<RentalService>> _mockLogger;
+        private readonly Mock<NotificationHandler> _mockNotification;
+
         public RentalServiceTests()
         {
             _mockRentalRepository = new Mock<IRentalRepository>();
             _mockDriverRepository = new Mock<IDriverRepository>();
             _mockValidator = new Mock<IValidator<RentalCreateDto>>();
             _mockPriceRangeService = new Mock<IPriceRangeService>();
+            _mockLogger = new Mock<ILogger<RentalService>>();
+            _mockNotification = new Mock<NotificationHandler>();
 
             _rentalService = new RentalService(
                 _mockRentalRepository.Object,
                 _mockValidator.Object,
                 _mockDriverRepository.Object,
-                _mockPriceRangeService.Object
+                _mockPriceRangeService.Object,
+                _mockLogger.Object,
+                _mockNotification.Object
             );
         }
 
-        //[Fact]
-        //public async Task GetByIdAsync_ShouldReturnRentalReadDto_WhenRentalExists()
-        //{
-        //    // Arrange
-        //    var rental = new Rental { Id = 1, DriverId = 1, StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(5) };
-        //    _mockRentalRepository.Setup(repo => repo.GetByIdAsync(rental.Id)).ReturnsAsync(rental);
-
-        //    // Act
-        //    var result = await _rentalService.GetByIdAsync(rental.Id);
-
-        //    // Assert
-        //    Assert.NotNull(result);
-        //    Assert.Equal(rental.Id, result);
-        //    _mockRentalRepository.Verify(repo => repo.GetByIdAsync(rental.Id), Times.Once);
-        //}
 
         [Fact]
-        public async Task AddAsync_ShouldReturnZero_WhenDriverDoesNotHaveLicenseTypeA()
+        public async Task AddAsync_ShouldReturnNull_WhenDriverDoesNotHaveLicenseTypeA()
         {
             // Arrange
             var rentalDto = new RentalCreateDto { EntregadorId = 1 };
@@ -68,7 +62,7 @@ namespace DesafioBackEndProject.Tests
             var result = await _rentalService.AddAsync(rentalDto);
 
             // Assert
-            Assert.Equal(0, result); // Deve retornar 0, pois o driver não tem licença 'A'
+            Assert.Null(result); // Deve retornar 0, pois o driver não tem licença 'A'
             _mockRentalRepository.Verify(repo => repo.AddAsync(It.IsAny<Rental>()), Times.Never);
         }
 
@@ -83,7 +77,7 @@ namespace DesafioBackEndProject.Tests
             var driver = new Driver { Id = 1, DriverLicenseType = "A" }; // Driver com licença 'A'
             _mockDriverRepository.Setup(repo => repo.GetById(It.IsAny<int>())).ReturnsAsync(driver);
 
-            
+
             _mockRentalRepository.Setup(repo => repo.AddAsync(It.IsAny<Rental>())).ReturnsAsync(1); // Simulando o retorno do ID
 
             // Act
@@ -124,7 +118,7 @@ namespace DesafioBackEndProject.Tests
             var result = await _rentalService.CalculateRentalReturnPrice(1, DateTime.Now);
 
             // Assert
-            Assert.Equal(0, result); // Deve retornar 0, pois o aluguel não existe
+            Assert.Null(result); // Deve retornar 0, pois o aluguel não existe
             _mockRentalRepository.Verify(repo => repo.GetByIdAsync(It.IsAny<int>()), Times.Once);
             _mockPriceRangeService.Verify(service => service.GetPrice(It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<Rental>()), Times.Never);
         }

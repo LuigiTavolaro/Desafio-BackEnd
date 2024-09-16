@@ -1,10 +1,12 @@
 ﻿using DesafioBackEndProject.Application.DTOs;
 using DesafioBackEndProject.Application.Interfaces;
 using DesafioBackEndProject.Application.Services;
+using DesafioBackEndProject.Domain.Common;
 using DesafioBackEndProject.Domain.Entities;
 using FluentValidation;
 using FluentValidation.Results;
 using MassTransit;
+using Microsoft.Extensions.Logging;
 using Moq;
 
 namespace DesafioBackEndProject.Tests
@@ -18,13 +20,17 @@ namespace DesafioBackEndProject.Tests
         private readonly Mock<IBus> _busMock;
         private readonly MotorcycleService _motorcycleService;
 
+        private readonly Mock<ILogger<MotorcycleService>> _mockLogger;
+        private readonly Mock<NotificationHandler> _mockNotification;
+
         public MotorcycleServiceTests()
         {
             _motoRepositoryMock = new Mock<IMotorcycleRepository>();
             _validatorMock = new Mock<IValidator<MotorcycleCreateDto>>();
             _busMock = new Mock<IBus>();
-
-            _motorcycleService = new MotorcycleService(_motoRepositoryMock.Object, _validatorMock.Object, _busMock.Object);
+            _mockLogger = new Mock<ILogger<MotorcycleService>>();
+            _mockNotification = new Mock<NotificationHandler>();
+            _motorcycleService = new MotorcycleService(_motoRepositoryMock.Object, _validatorMock.Object, _busMock.Object, _mockLogger.Object, _mockNotification.Object);
         }
 
         [Fact]
@@ -84,23 +90,7 @@ namespace DesafioBackEndProject.Tests
             _busMock.Verify(x => x.Publish(motorcycleDto, default), Times.Once);
         }
 
-        [Fact]
-        public async Task AddAsync_ShouldThrowValidationException_WhenInvalid()
-        {
-            // Arrange
-            var motorcycleDto = new MotorcycleCreateDto { Plate = "INVALID" };
-            var validationResult = new FluentValidation.Results.ValidationResult(new List<ValidationFailure>
-        {
-            new ValidationFailure("Plate", "Invalid plate format.")
-        });
-            _validatorMock.Setup(x => x.ValidateAsync(motorcycleDto, default)).ReturnsAsync(validationResult);
-
-            // Act & Assert
-            await Assert.ThrowsAsync<FluentValidation.ValidationException>(() => _motorcycleService.AddAsync(motorcycleDto));
-            _validatorMock.Verify(x => x.ValidateAsync(motorcycleDto, default), Times.Once);
-            _motoRepositoryMock.Verify(x => x.AddAsync(It.IsAny<Motorcycle>()), Times.Never);
-            _busMock.Verify(x => x.Publish(motorcycleDto, default), Times.Never);
-        }
+        
 
         [Fact]
         public async Task DeleteAsync_ShouldCallDelete_WhenNoRentalsExist()

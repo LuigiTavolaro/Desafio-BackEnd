@@ -1,9 +1,11 @@
 ﻿using DesafioBackEndProject.Application.DTOs;
 using DesafioBackEndProject.Application.Interfaces;
+using DesafioBackEndProject.Domain.Common;
 using DesafioBackEndProject.Domain.Entities;
 using FluentValidation;
 using Mapster;
 using MassTransit;
+using Microsoft.Extensions.Logging;
 
 namespace DesafioBackEndProject.Application.Services
 {
@@ -12,12 +14,17 @@ namespace DesafioBackEndProject.Application.Services
         private readonly IMotorcycleRepository _motoRepository;
         private readonly IValidator<MotorcycleCreateDto> _createMotorcycleDtoValidator;
         private readonly IBus _bus;
+        private readonly ILogger<MotorcycleService> _logger;
 
-        public MotorcycleService(IMotorcycleRepository motoRepository, IValidator<MotorcycleCreateDto> createMotorcycleDtoValidator, IBus bus)
+        private readonly NotificationHandler _notificationHandler;
+
+        public MotorcycleService(IMotorcycleRepository motoRepository, IValidator<MotorcycleCreateDto> createMotorcycleDtoValidator, IBus bus, ILogger<MotorcycleService> logger, NotificationHandler notificationHandler)
         {
             _motoRepository = motoRepository;
             _createMotorcycleDtoValidator = createMotorcycleDtoValidator;
             _bus = bus;
+            _logger = logger;
+            _notificationHandler = notificationHandler;
         }
 
         public async Task<IEnumerable<MotorcycleReadDto>> GetAllAsync()
@@ -39,42 +46,77 @@ namespace DesafioBackEndProject.Application.Services
             return moto.Adapt<MotorcycleReadDto?>();
         }
 
-        public async Task<int> AddAsync(MotorcycleCreateDto motoDto)
+        public async Task<int?> AddAsync(MotorcycleCreateDto motoDto)
         {
-            var validationResult = await _createMotorcycleDtoValidator.ValidateAsync(motoDto);
-            if (!validationResult.IsValid)
+            try
             {
-                throw new ValidationException(validationResult.Errors);
+                var validationResult = await _createMotorcycleDtoValidator.ValidateAsync(motoDto);
+                if (!validationResult.IsValid)
+                {
+                    validationResult.Errors.ForEach(error =>
+                        _notificationHandler.AddNotification(new Notification(error.ErrorMessage, error.PropertyName)));
+                    return null;
+                }
+
+
+                var moto = motoDto.Adapt<Motorcycle>();
+
+                var motorcycleByPlate = await _motoRepository.GetByPlateAsync(moto.Plate ?? string.Empty).ConfigureAwait(false);
+
+                if (motorcycleByPlate != null)
+                {
+                    _notificationHandler.AddNotification(new Notification("Placa já cadastrada"));
+                    return null;
+                }
+
+                await _bus.Publish(motoDto);
+
+                return await _motoRepository.AddAsync(moto).ConfigureAwait(false);
             }
-
-
-            var moto = motoDto.Adapt<Motorcycle>();
-
-            var motorcycleByPlate = await _motoRepository.GetByPlateAsync(moto.Plate ?? string.Empty).ConfigureAwait(false);
-
-            if (motorcycleByPlate != null)
-                return 0;
-
-            await _bus.Publish(motoDto);
-
-            return await _motoRepository.AddAsync(moto);
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao cadastrar uma motocicleta");
+                _notificationHandler.AddNotification(new Notification("Erro ao cadastrar uma motocicleta"));
+                return null;
+            }
         }
 
         public async Task UpdatePlateAsync(int id, string newPlate)
         {
-            await _motoRepository.UpdatePlateAsync(id, newPlate).ConfigureAwait(false);
+            try
+            {
+                await _motoRepository.UpdatePlateAsync(id, newPlate).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao atualizar a motocicleta");
+                _notificationHandler.AddNotification(new Notification("Erro ao atualizar uma motocicleta")); 
+                return;
+            }
         }
 
         public async Task DeleteAsync(int id)
         {
-            var moto = await _motoRepository.GetByIdAsync(id).ConfigureAwait(false);
-
-            if (moto?.Rentals?.Any() == true)
+            try
             {
+
+                var moto = await _motoRepository.GetByIdAsync(id).ConfigureAwait(false);
+
+                if (moto?.Rentals?.Any() == true)
+                {
+                    _notificationHandler.AddNotification(new Notification("Não foi possível apagar o registro, pois existem locações cadastradas para essa motocicleta"));
+                    return;
+                }
+
+                await _motoRepository.DeleteAsync(id).ConfigureAwait(false);
+
+            }
+            catch (Exception ex )
+            {
+                _logger.LogError(ex, "Erro ao deletar a matocicleta");
+                _notificationHandler.AddNotification(new Notification("Erro ao deletar a matocicleta"));
                 return;
             }
-
-            await _motoRepository.DeleteAsync(id).ConfigureAwait(false);
         }
     }
 }
