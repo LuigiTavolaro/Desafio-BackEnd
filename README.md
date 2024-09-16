@@ -11,29 +11,32 @@ Bem-vindo ao **DesafioBackEndProject**! Este documento irá guiá-lo na configur
 
 ## Configuração do Ambiente
 
-1. **Clone o repositório**
+1. Clone o repositório
 
-   Primeiro, clone o repositório para o seu ambiente local:
+Primeiro, clone o repositório para o seu ambiente local:
 
    ```bash
    git clone https://github.com/LuigiTavolaro/Desafio-BackEnd/tree/feature/desafio
    cd DesafioBackEndProject
+```
 
-### 2. Suba os contêineres Docker
+2. Suba os contêineres Docker
 
 No diretório do repositório, execute o comando abaixo para construir e iniciar os contêineres Docker:
 
 ```bash
-docker-compose up --build
+   docker-compose up --build
+```
 
 Este comando irá construir as imagens e iniciar os serviços definidos no arquivo docker-compose.yml.
 
-### 3. Execute o projeto .NET
+3. Execute o projeto .NET
 
 Com os contêineres em execução, inicie o projeto .NET `DesafioBackEndProject`. Navegue até o diretório do projeto e execute:
 
 ```bash
 dotnet run
+```
 
 Certifique-se de que o projeto está configurado para se conectar ao banco de dados e ao RabbitMQ definidos no Docker Compose.
 
