@@ -1,0 +1,345 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|solutionrelative:desafiobackendproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject\\dependecyinjection\\fluentvalidationconfigurationdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|solutionrelative:desafiobackendproject\\dependecyinjection\\fluentvalidationconfigurationdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject\\dependecyinjection\\databaseconfigurationdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|solutionrelative:desafiobackendproject\\dependecyinjection\\databaseconfigurationdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject\\dependecyinjection\\masstransitconfigurationdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|solutionrelative:desafiobackendproject\\dependecyinjection\\masstransitconfigurationdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94B632BC-11F5-45E6-ACA1-59FD1FD8B233}|DesafioBackEndProject.Infrastructure\\DesafioBackEndProject.Infrastructure.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94B632BC-11F5-45E6-ACA1-59FD1FD8B233}|DesafioBackEndProject.Infrastructure\\DesafioBackEndProject.Infrastructure.csproj|solutionrelative:desafiobackendproject.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\services\\motorcycleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\services\\motorcycleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\services\\driverservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\services\\driverservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\services\\rentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\services\\rentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\services\\pricerangeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\services\\pricerangeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\services\\ipricerangeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\services\\ipricerangeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\services\\irentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\services\\irentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|solutionrelative:desafiobackendproject\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\validators\\motorcyclevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\validators\\motorcyclevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\validators\\drivervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\validators\\drivervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\validators\\rentalvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\validators\\rentalvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94B632BC-11F5-45E6-ACA1-59FD1FD8B233}|DesafioBackEndProject.Infrastructure\\DesafioBackEndProject.Infrastructure.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.infrastructure\\messaging\\motorcycleconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94B632BC-11F5-45E6-ACA1-59FD1FD8B233}|DesafioBackEndProject.Infrastructure\\DesafioBackEndProject.Infrastructure.csproj|solutionrelative:desafiobackendproject.infrastructure\\messaging\\motorcycleconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject.application\\dtos\\pricerangedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83249E01-84D2-471E-9D22-CDD5F4ED5532}|DesafioBackEndProject.Application\\DesafioBackEndProject.Application.csproj|solutionrelative:desafiobackendproject.application\\dtos\\pricerangedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|c:\\users\\luigi\\documents\\github\\desafio-backend\\desafiobackendproject\\desafiobackendproject\\controllers\\driverscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0987845A-5EC9-40D8-80A2-4EA61B3F9008}|DesafioBackEndProject\\DesafioBackEndProject.csproj|solutionrelative:desafiobackendproject\\controllers\\driverscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FluentValidationConfigurationDI.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\DependecyInjection\\FluentValidationConfigurationDI.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject\\DependecyInjection\\FluentValidationConfigurationDI.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\DependecyInjection\\FluentValidationConfigurationDI.cs",
+              "RelativeToolTip": "DesafioBackEndProject\\DependecyInjection\\FluentValidationConfigurationDI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T13:14:09.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseConfigurationDI.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\DependecyInjection\\DatabaseConfigurationDI.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject\\DependecyInjection\\DatabaseConfigurationDI.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\DependecyInjection\\DatabaseConfigurationDI.cs",
+              "RelativeToolTip": "DesafioBackEndProject\\DependecyInjection\\DatabaseConfigurationDI.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T13:10:08.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\Program.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject\\Program.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\Program.cs",
+              "RelativeToolTip": "DesafioBackEndProject\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T13:08:28.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MassTransitConfigurationDI.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\DependecyInjection\\MassTransitConfigurationDI.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject\\DependecyInjection\\MassTransitConfigurationDI.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\DependecyInjection\\MassTransitConfigurationDI.cs",
+              "RelativeToolTip": "DesafioBackEndProject\\DependecyInjection\\MassTransitConfigurationDI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T13:07:54.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T13:06:04.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\DependencyInjection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T13:05:19.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MotorcycleService.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\MotorcycleService.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Services\\MotorcycleService.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\MotorcycleService.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Services\\MotorcycleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T12:52:47.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DriverService.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\DriverService.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Services\\DriverService.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\DriverService.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Services\\DriverService.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAgwEoAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T12:51:57.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IRentalService.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\IRentalService.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Services\\IRentalService.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\IRentalService.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Services\\IRentalService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T12:43:10.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DriverValidator.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Validators\\DriverValidator.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Validators\\DriverValidator.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Validators\\DriverValidator.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Validators\\DriverValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T12:31:33.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MotorcycleValidator.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Validators\\MotorcycleValidator.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Validators\\MotorcycleValidator.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Validators\\MotorcycleValidator.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Validators\\MotorcycleValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T12:31:27.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MotorcycleConsumer.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Infrastructure\\Messaging\\MotorcycleConsumer.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Infrastructure\\Messaging\\MotorcycleConsumer.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Infrastructure\\Messaging\\MotorcycleConsumer.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Infrastructure\\Messaging\\MotorcycleConsumer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T12:30:46.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RentalValidator.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Validators\\RentalValidator.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Validators\\RentalValidator.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Validators\\RentalValidator.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Validators\\RentalValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T12:23:27.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RentalService.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\RentalService.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Services\\RentalService.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\RentalService.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Services\\RentalService.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAgwDkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T12:05:04.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IPriceRangeService.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\IPriceRangeService.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Services\\IPriceRangeService.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\IPriceRangeService.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Services\\IPriceRangeService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T05:21:22.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PriceRangeService.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\PriceRangeService.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\Services\\PriceRangeService.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\Services\\PriceRangeService.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\Services\\PriceRangeService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAYwCQAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T05:21:07.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PriceRangeDto.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\DTOs\\PriceRangeDto.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject.Application\\DTOs\\PriceRangeDto.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject.Application\\DTOs\\PriceRangeDto.cs",
+              "RelativeToolTip": "DesafioBackEndProject.Application\\DTOs\\PriceRangeDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T05:20:59.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DriversController.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\Controllers\\DriversController.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject\\Controllers\\DriversController.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\Controllers\\DriversController.cs",
+              "RelativeToolTip": "DesafioBackEndProject\\Controllers\\DriversController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAiwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T05:20:43.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RentalController.cs",
+              "DocumentMoniker": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\Controllers\\RentalController.cs",
+              "RelativeDocumentMoniker": "DesafioBackEndProject\\Controllers\\RentalController.cs",
+              "ToolTip": "C:\\Users\\luigi\\Documents\\GitHub\\Desafio-BackEnd\\DesafioBackEndProject\\DesafioBackEndProject\\Controllers\\RentalController.cs",
+              "RelativeToolTip": "DesafioBackEndProject\\Controllers\\RentalController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAgwD0AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T05:20:36.415Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
