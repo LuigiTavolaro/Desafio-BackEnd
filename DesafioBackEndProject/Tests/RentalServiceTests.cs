@@ -96,7 +96,7 @@ namespace DesafioBackEndProject.Tests
             _mockRentalRepository.Setup(repo => repo.GetByIdAsync(rental.Id)).ReturnsAsync(rental);
 
             var returnDate = DateTime.Now;
-            _mockPriceRangeService.Setup(service => service.GetPrice(rental.StartDate, rental.EndDate, returnDate, rental))
+            _mockPriceRangeService.Setup(service => service.GetPrice(rental.StartDate, rental.EndDate, rental.ExpectedEndDate, returnDate, rental))
                                   .ReturnsAsync(500m); // Simulando o cálculo do preço
 
             // Act
@@ -105,7 +105,7 @@ namespace DesafioBackEndProject.Tests
             // Assert
             Assert.Equal(500m, result); // Deve retornar o preço calculado
             _mockRentalRepository.Verify(repo => repo.GetByIdAsync(rental.Id), Times.Once);
-            _mockPriceRangeService.Verify(service => service.GetPrice(It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<Rental>()), Times.Once);
+            _mockPriceRangeService.Verify(service => service.GetPrice(It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<Rental>()), Times.Once);
         }
 
         [Fact]
@@ -120,7 +120,7 @@ namespace DesafioBackEndProject.Tests
             // Assert
             Assert.Null(result); // Deve retornar 0, pois o aluguel não existe
             _mockRentalRepository.Verify(repo => repo.GetByIdAsync(It.IsAny<int>()), Times.Once);
-            _mockPriceRangeService.Verify(service => service.GetPrice(It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<Rental>()), Times.Never);
+            _mockPriceRangeService.Verify(service => service.GetPrice(It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<Rental>()), Times.Never);
         }
     }
 }

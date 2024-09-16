@@ -32,7 +32,13 @@ namespace DesafioBackEndProject.Application.Services
         {
             var rental = await _rentalRepository.GetByIdAsync(id).ConfigureAwait(false);
 
-            return rental.Adapt<RentalReadDto?>();
+            var rentalDto = rental.Adapt<RentalReadDto?>();
+
+            rentalDto.ValorDiaria = rental?.PriceRange?.PricePerDay ?? 0;
+            
+            return rentalDto;
+
+
         }
 
         public async Task<int?> AddAsync(RentalCreateDto rentalDto)
@@ -44,6 +50,7 @@ namespace DesafioBackEndProject.Application.Services
                 {
                     validationResult.Errors.ForEach(error =>
                         _notificationHandler.AddNotification(new Notification(error.ErrorMessage, error.PropertyName)));
+                    return null;
                 }
 
                 var rental = rentalDto.Adapt<Rental>();
@@ -79,7 +86,7 @@ namespace DesafioBackEndProject.Application.Services
                 return null;
             }
 
-            var calculatePrice = await _priceRangeService.GetPrice(rental.StartDate, rental.EndDate, dataDevoluacao, rental).ConfigureAwait(false);
+            var calculatePrice = await _priceRangeService.GetPrice(rental.StartDate, rental.EndDate, rental.ExpectedEndDate, dataDevoluacao, rental).ConfigureAwait(false);
 
             return calculatePrice;
 

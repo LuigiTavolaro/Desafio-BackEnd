@@ -90,7 +90,7 @@ namespace DesafioBackEndProject.Application.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Erro ao atualizar a motocicleta");
-                _notificationHandler.AddNotification(new Notification("Erro ao atualizar uma motocicleta")); 
+                _notificationHandler.AddNotification(new Notification("Erro ao atualizar uma motocicleta"));
                 return;
             }
         }
@@ -101,6 +101,11 @@ namespace DesafioBackEndProject.Application.Services
             {
 
                 var moto = await _motoRepository.GetByIdAsync(id).ConfigureAwait(false);
+                if (moto == null)
+                {
+                    _notificationHandler.AddNotification(new Notification("motocicleta não encontrada"));
+                    return;
+                }
 
                 if (moto?.Rentals?.Any() == true)
                 {
@@ -111,7 +116,7 @@ namespace DesafioBackEndProject.Application.Services
                 await _motoRepository.DeleteAsync(id).ConfigureAwait(false);
 
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Erro ao deletar a matocicleta");
                 _notificationHandler.AddNotification(new Notification("Erro ao deletar a matocicleta"));

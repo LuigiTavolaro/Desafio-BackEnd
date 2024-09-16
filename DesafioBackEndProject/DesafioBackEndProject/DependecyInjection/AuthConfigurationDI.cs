@@ -8,7 +8,7 @@ namespace DesafioBackEndProject.DependecyInjection
 {
     public static class AuthConfigurationDI
     {
-        public static void AddAuthConfiguration(this IServiceCollection services, ConfigurationManager configuration )
+        public static void AddAuthConfiguration(this IServiceCollection services )
         {
 
 

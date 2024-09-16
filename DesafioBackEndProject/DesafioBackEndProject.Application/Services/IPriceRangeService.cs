@@ -5,6 +5,6 @@ namespace DesafioBackEndProject.Application.Services
 {
     public interface IPriceRangeService
     {
-        Task<decimal> GetPrice(DateTime startDate, DateTime endDate, DateTime returnDate, Rental plan);
+        Task<decimal> GetPrice(DateTime startDate, DateTime endDate, DateTime expectedEndDate, DateTime returnDate, Rental plan);
     }
 }

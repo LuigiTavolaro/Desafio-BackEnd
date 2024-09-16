@@ -25,7 +25,8 @@ namespace DesafioBackEndProject.Infrastructure.Repositories
         {
             return await _context.Rentals
             .Include(r => r.Motorcycle) 
-            .Include(r => r.Driver)     
+            .Include(r => r.Driver)
+            .Include(r => r.PriceRange)
             .FirstOrDefaultAsync(r => r.Id == id); 
         }
     }

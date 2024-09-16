@@ -19,8 +19,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddFluentValidationConfiguration();
 builder.Services.AddMassTransitConfiguration();
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
+builder.Services.AddAuthConfiguration();
 
-builder.Services.AddSingleton<NotificationHandler>();
+
+builder.Services.AddScoped<NotificationHandler>();
 
 builder.Services.AddMemoryCache();
 

@@ -1,5 +1,8 @@
-﻿namespace DesafioBackEndProject.Domain.Common
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace DesafioBackEndProject.Domain.Common
 {
+    [ExcludeFromCodeCoverage]
     public class NotificationHandler
     {
         private readonly List<Notification> _notifications = new List<Notification>();

@@ -14,12 +14,12 @@ namespace DesafioBackEndProject.Application.Services
             _priceRangeRepository = priceRangeRepository;
         }
 
-        public async Task<decimal> GetPrice(DateTime startDate, DateTime endDate, DateTime returnDate, Rental plan)
+        public async Task<decimal> GetPrice(DateTime startDate, DateTime endDate, DateTime expectedEndDate, DateTime returnDate, Rental plan)
         {
             var priceRange = await _priceRangeRepository.GetPrices();
 
 
-            if (returnDate < endDate)
+            if (returnDate < expectedEndDate)
             {
                 throw new ArgumentException("A data de devolução não pode ser antes da data de término prevista.");
             }

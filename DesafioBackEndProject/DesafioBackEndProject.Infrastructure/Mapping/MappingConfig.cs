@@ -23,6 +23,7 @@ namespace DesafioBackEndProject.Infrastructure.Mapping
                 .NewConfig()
                 .Map(dest => dest.MotorcycleId, src => src.MotoId)
                 .Map(dest => dest.DriverId, src => src.EntregadorId)
+                .Map(dest => dest.PriceRangeId, src => src.PlanoId)
                 .Map(dest => dest.EndDate, src => src.DataTermino)
                 .Map(dest => dest.StartDate, src => src.DataInicio)
                 .Map(dest => dest.ExpectedEndDate, src => src.DataPrevisaoTermino)
@@ -38,6 +39,7 @@ namespace DesafioBackEndProject.Infrastructure.Mapping
                 .Map(dest => dest.DataPrevisaoTermino, src => src.ExpectedEndDate)
                 .Map(dest => dest.EntregadorId, src => src.DriverId)
                 .Map(dest => dest.MotoId, src => src.MotorcycleId)
+                .Map(dest => dest.PlanoId, src => src.PriceRangeId)
                 .Map(dest => dest.DataTermino, src => src.EndDate)
                 .Map(dest => dest.DataInicio, src => src.StartDate)
                 .Map(dest => dest.DataPrevisaoTermino, src => src.ExpectedEndDate);

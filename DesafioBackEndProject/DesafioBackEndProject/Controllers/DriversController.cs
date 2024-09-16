@@ -27,6 +27,8 @@ namespace DesafioBackEndProject.Controllers
         /// <param name="driverDto">Os dados do entregador a ser cadastrada.</param>
         /// <returns>O ID cadastrado.</returns>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(DriverCreateDto))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> CreateDriver([FromBody] DriverCreateDto driverDto)
         {
             if (driverDto == null)
@@ -42,19 +44,19 @@ namespace DesafioBackEndProject.Controllers
         }
 
         /// <summary>
-        /// Modifica a placa de uma moto existente.
+        /// Modifica a foto da carteira de motorista.
         /// </summary>
-        /// <param name="id">O ID da moto a ser atualizada.</param>
-        /// <param name="newPlate">A nova placa da moto.</param>
+        /// <param name="id">O ID do entregador.</param>
+        /// <param name="newCnh">A nova imagem em formato bit64 da moto.</param>
         /// <returns>Status da operação.</returns>
-        [HttpPut("{id}/placa")]
-        public async Task<IActionResult> UpdatePlate(int id, [FromBody] string newCnh)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCnhPicture(int id, [FromBody] string newCnh)
         {
             if (string.IsNullOrWhiteSpace(newCnh))
                 return BadRequest("Nova CNH não fornecida.");
 
             await _driverService.UpdateCnhPictureAsync(id, newCnh);
-            return NoContent();
+            return Accepted();
         }
     }
 }
