@@ -1,11 +1,13 @@
 ﻿using DesafioBackEndProject.Application.DTOs;
 using DesafioBackEndProject.Application.Services;
 using DesafioBackEndProject.Domain.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DesafioBackEndProject.Controllers
 {
     [ApiController]
+    [Authorize(Policy = "DriverPolicy")]
     [Route("locacao")]
     public class RentalController : ControllerBase
     {
