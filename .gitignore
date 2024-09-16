@@ -60,11 +60,6 @@ secrets/
 *.swp
 *.swo
 
-# Ignore configuration files
-*.json
-*.xml
-*.yml
-
 # Ignore NuGet-specific files
 nuget.exe
 packages/
