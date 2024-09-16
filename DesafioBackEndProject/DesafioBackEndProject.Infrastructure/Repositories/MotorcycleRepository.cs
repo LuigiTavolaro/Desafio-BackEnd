@@ -21,11 +21,13 @@ namespace DesafioBackEndProject.Infrastructure.Repositories
 
         public async Task<Motorcycle?> GetByIdAsync(int id)
         {
-            return await _context.Motos.FindAsync(id);
+            return await _context.Motos
+                .Include(r => r.Rentals)
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
         public async Task<Motorcycle?> GetByPlateAsync(string plate)
         {
-            return await _context.Motos.FirstOrDefaultAsync(x=>x.Plate == plate);
+            return await _context.Motos.FirstOrDefaultAsync(x => x.Plate == plate);
         }
 
         public async Task<int> AddAsync(Motorcycle moto)

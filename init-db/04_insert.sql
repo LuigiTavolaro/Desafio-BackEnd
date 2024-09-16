@@ -19,6 +19,3 @@ INSERT INTO "desafio-backend".price_range (max_days,price_per_day,penalty_rate) 
 INSERT INTO "desafio-backend".drivers ("name",cnpj,birth_date,driver_license_number,driver_license_type,driver_license_image_url,created_at,updated_at) VALUES
 	 ('José Silveira','27745648000143','2024-09-14','321321321','A',NULL,'2024-09-14 06:18:44.248707','2024-09-14 06:18:44.248708');
 
-INSERT INTO "desafio-backend".rentals (motorcycle_id,start_date,end_date,expected_end_date,created_at,updated_at,driver_id) VALUES
-	 (4,'2024-09-14','2024-09-14','2024-09-14','2024-09-14 07:16:15.198492','2024-09-14 07:16:15.198492',1);
-
