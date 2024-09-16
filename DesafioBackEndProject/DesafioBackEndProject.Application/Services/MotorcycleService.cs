@@ -69,7 +69,7 @@ namespace DesafioBackEndProject.Application.Services
         {
             var moto = await _motoRepository.GetByIdAsync(id).ConfigureAwait(false);
 
-            if (moto?.Rentals?.Any() != true)
+            if (moto?.Rentals?.Any() == true)
             {
                 return;
             }

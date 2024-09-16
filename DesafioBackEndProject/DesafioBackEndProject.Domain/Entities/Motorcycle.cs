@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace DesafioBackEndProject.Domain.Entities
 {
+    [ExcludeFromCodeCoverage]
     [Table("motorcycles")]
     public record Motorcycle
     {
@@ -21,7 +23,7 @@ namespace DesafioBackEndProject.Domain.Entities
         public DateTime? UpdatedAt { get; set; }
 
 
-        public ICollection<Rental> Rentals { get; set; }
+        public ICollection<Rental>? Rentals { get; set; }
 
     }
 }

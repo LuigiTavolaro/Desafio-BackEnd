@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace DesafioBackEndProject.Domain.Entities
 {
+    [ExcludeFromCodeCoverage]
     [Table("drivers")]
     public record Driver
     {
@@ -39,6 +41,6 @@ namespace DesafioBackEndProject.Domain.Entities
         [Column("updated_at")]
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-        public ICollection<Rental> Rentals { get; set; }
+        public ICollection<Rental>? Rentals { get; set; }
     }
 }

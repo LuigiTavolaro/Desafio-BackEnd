@@ -1,5 +1,8 @@
-﻿namespace DesafioBackEndProject.Application.DTOs
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace DesafioBackEndProject.Application.DTOs
 {
+    [ExcludeFromCodeCoverage]
     public record PriceRangeDto
     {
         public int Id { get; set; }

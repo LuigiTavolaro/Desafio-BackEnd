@@ -80,3 +80,4 @@ publish/
 *.v2
 *.bin
 *.v2
+*.coverage

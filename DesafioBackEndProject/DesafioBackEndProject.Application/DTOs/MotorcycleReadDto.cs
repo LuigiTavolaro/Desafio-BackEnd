@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace DesafioBackEndProject.Application.DTOs
 {
+    [ExcludeFromCodeCoverage]
     public record MotorcycleReadDto
     {
         public int Id { get; set; }

@@ -1,5 +1,8 @@
-﻿namespace DesafioBackEndProject.Application.DTOs
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace DesafioBackEndProject.Application.DTOs
 {
+    [ExcludeFromCodeCoverage]
     public record RentalCreateDto
     {
         public int EntregadorId { get; set; }
